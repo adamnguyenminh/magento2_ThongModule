@@ -1,0 +1,7 @@
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Thong\HelloWorld\Controller\Index\Example">
+        <plugin name="Thong_HelloWorld_Plugin" type="Thong\HelloWorld\Plugin\ExamplePlugin" sortOrder="10" disabled="false"  />
+    </type>
+</config>
+
