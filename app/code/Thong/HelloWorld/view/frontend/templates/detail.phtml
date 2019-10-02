@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * @var ArticleDetail $block
+ */
+
+use Thong\HelloWorld\Block\ArticleDetail;
+use Thong\HelloWorld\Block\Allarticle;
+
+echo $block->Detail();
+
+//if(isset($_GET['ID'])){
+//    $block->GetIDArticle($_GET['ID']);
+//}
+?>
+<style>
+    table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
+    td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
+    tr:nth-child(even) { background-color: #dddddd; }
+    .post-id{width:2%} .post-name{width:30%}
+
+</style>
+<table>
+    <tr>
+        <th class="artice-id">Id</th>
+        <th class="title">Name</th>
+        <th class="content">Content</th>
+        <th class="image">Image</th>
+        <th class="created-at">Create At</th>
+        <th class="updated-at">Update At</th>
+    </tr>
+    <?php
+    if(isset($_GET['ID'])){
+        $articledetailID = $block->GetIDArticle($_GET['ID']);
+        $article = $articledetailID[0];
+        ?>
+        <tr>
+            <td><?= $article['article_id'] ?></td>
+            <td><?= $article['title'] ?></td>
+            <td><?= $article['content'] ?></td>
+            <td><?= $article['image'] ?></td>
+            <td><?= $article['created_at'] ?></td>
+            <td><?= $article['updated_at'] ?></td>
+        </tr>
+        <?php
+    }
+    ?>
+</table>
+
+</body>
+</html>
+
+

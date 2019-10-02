@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @var Allarticle $block
+ */
+
+use Thong\HelloWorld\Block\Allarticle;
+
+echo $block->LoadAllArticle();
+//echo $block->GetCollection();
+//if(isset($_GET['ID'])){
+//    $block->GetIDArticle($_GET['ID']);
+//}
+?>
+
+<style>
+    table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
+    td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
+    tr:nth-child(even) { background-color: #dddddd; }
+    .post-id{width:2%} .post-name{width:30%}
+
+</style>
+<table>
+    <tr>
+        <th class="artice-id">Id</th>
+        <th class="title">Name</th>
+        <th></th>
+    </tr>
+    <?php
+    foreach ($block->GetCollection() as $key=>$article) {
+        ?>
+        <tr>
+            <td><?= $article['article_id'] ?></td>
+            <td><?= $article['title'] ?></td>
+            <td><a href="articledetail?ID=<?= $article['article_id'] ?>">Show Detail</a></td>
+        </tr>
+    <?php
+    }
+    ?>
+</table>
+
+</body>
+</html>
+
