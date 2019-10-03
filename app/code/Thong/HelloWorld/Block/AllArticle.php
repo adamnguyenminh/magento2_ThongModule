@@ -15,6 +15,21 @@ class AllArticle extends Template
         parent::__construct($context);
     }
 
+    public function _prepareLayout(){
+        $this->pageConfig->getTitle()->set(__('Simple Pagination'));
+        if ($this->GetCollection()) {
+            $pager = $this->getLayout()->createBlock(
+                'Magento\Theme\Block\Html\Pager',
+                'thong.helloworld.pager'
+            )->setAvailableLimit(array(2=>2,4=>4))->setShowPerPage(true)->setCollection(
+                $this->getCollection()
+            );
+            $this->setChild('pager', $pager);
+            $this->getCollection()->load();
+        }
+        return parent::_prepareLayout();
+    }
+
     public function LoadAllArticle()
     {
         return __('All Article');
@@ -23,7 +38,17 @@ class AllArticle extends Template
     public function GetCollection()
     {
         $article = $this->_CollectionFactory->create();
-        return $article;
+        $page = ($this->getRequest()->getParam('page')) ? $this->getRequest()->getParam('page') : 1;
+        $pageSize = ($this->getRequest()->getParam('limit')) ? $this->getRequest()->getParam('limit') : 2;
+        $articleCollection = $article;
+        $articleCollection->setPageSize($pageSize);
+        $articleCollection->setCurPage($page);
+        return $articleCollection;
+    }
+
+    public function getPagerHtml()
+    {
+        return $this->getChildHtml('pager');
     }
 
 }

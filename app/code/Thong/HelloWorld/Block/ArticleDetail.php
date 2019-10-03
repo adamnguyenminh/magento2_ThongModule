@@ -21,12 +21,7 @@ class ArticleDetail extends Template
 
     public function GetIDArticle($id){
         $article = $this->_CollectionFactory->create();
-        $a = $article->addFieldToFilter('article_id',$id);
-//        foreach ($a as $item) {
-//            echo "<pre>";
-//            print_r($item->getData());
-//            echo "</pre>";
-//        }
+        $a = $article->getItemById($id);
         return $a->getData();
     }
 }
