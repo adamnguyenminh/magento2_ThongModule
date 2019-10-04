@@ -9,51 +9,23 @@ use Thong\HelloWorld\Block\Allarticle;
 echo $block->LoadAllArticle();
 ?>
 
-<style>
-    table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
-    td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
-    tr:nth-child(even) { background-color: #dddddd; }
-
-    .pagination {
-        display: inline-block;
-    }
-
-    .pagination a {
-        color: black;
-        float: left;
-        padding: 8px 16px;
-        text-decoration: none;
-    }
-
-</style>
-<!--<table>-->
-<!--    <tr>-->
-<!--        <th class="artice-id">Id</th>-->
-<!--        <th class="title">Name</th>-->
-<!--        <th></th>-->
-<!--    </tr>-->
-<!--    --><?php
-//    foreach ($block->GetCollection() as $key=>$article) {
-//        ?>
-<!--        <tr>-->
-<!--            <td>--><?//= $article['article_id'] ?><!--</td>-->
-<!--            <td>--><?//= $article['title'] ?><!--</td>-->
-<!--            <td><a href="articledetail?ID=--><?//= $article['article_id'] ?><!--">Show Detail</a></td>-->
-<!--        </tr>-->
-<!--    --><?php
-//    }
-//    ?>
-<!--    <br/>-->
-<!--    <div class="pagination">-->
-<!--        <a href="#">&laquo;</a>-->
-<!--        <a href="?page=1&limit=1">1</a>-->
-<!--        <a href="?page=2&limit=1">2</a>-->
-<!--        <a href="#">&raquo;</a>-->
-<!--    </div>-->
-<!--</table>-->
-
-<!--</body>-->
-<!--</html>-->
+<!--<style>-->
+<!--    table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}-->
+<!--    td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }-->
+<!--    tr:nth-child(even) { background-color: #dddddd; }-->
+<!---->
+<!--    .pagination {-->
+<!--        display: inline-block;-->
+<!--    }-->
+<!---->
+<!--    .pagination a {-->
+<!--        color: black;-->
+<!--        float: left;-->
+<!--        padding: 8px 16px;-->
+<!--        text-decoration: none;-->
+<!--    }-->
+<!---->
+<!--</style>-->
 
 <?php if ($block->getPagerHtml()): ?>
     <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
@@ -73,7 +45,7 @@ echo $block->LoadAllArticle();
         <tr>
             <td><?= $article['article_id'] ?></td>
             <td><?= $article['title'] ?></td>
-            <td><a href="articledetail?ID=<?= $article['article_id'] ?>">Show Detail</a></td>
+            <td><a href="/magento2/helloworld/index/articledetail?ID=<?= $article['article_id'] ?>">Show Detail</a></td>
         </tr>
         <?php
     }

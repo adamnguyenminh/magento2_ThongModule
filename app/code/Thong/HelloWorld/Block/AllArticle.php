@@ -38,9 +38,10 @@ class AllArticle extends Template
     public function GetCollection()
     {
         $article = $this->_CollectionFactory->create();
-        $page = ($this->getRequest()->getParam('page')) ? $this->getRequest()->getParam('page') : 1;
+        $page = ($this->getRequest()->getParam('p')) ? $this->getRequest()->getParam('p') : 1;
         $pageSize = ($this->getRequest()->getParam('limit')) ? $this->getRequest()->getParam('limit') : 2;
         $articleCollection = $article;
+        $articleCollection->setOrder('article_id');
         $articleCollection->setPageSize($pageSize);
         $articleCollection->setCurPage($page);
         return $articleCollection;

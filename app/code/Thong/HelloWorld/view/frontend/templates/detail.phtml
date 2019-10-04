@@ -31,7 +31,7 @@ echo $block->Detail();
     </tr>
     <?php
     if(isset($_GET['ID'])){
-        $article = $block->GetIDArticle($_GET['ID']);
+        $article = $block->GetIDArticle();
         ?>
         <tr>
             <td><?= $article['article_id'] ?></td>

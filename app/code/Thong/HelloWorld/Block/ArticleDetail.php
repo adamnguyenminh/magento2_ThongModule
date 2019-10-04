@@ -19,9 +19,16 @@ class ArticleDetail extends Template
         return __('Hello World');
     }
 
-    public function GetIDArticle($id){
+//    public function GetIDArticle($id){
+//        $article = $this->_CollectionFactory->create();
+//        $a = $article->getItemById($id);
+//        return $a->getData();
+//    }
+
+    public function GetIDArticle(){
         $article = $this->_CollectionFactory->create();
-        $a = $article->getItemById($id);
+        $pa= $this->getRequest()->getParam('ID');
+        $a = $article->getItemById($pa);
         return $a->getData();
     }
 }

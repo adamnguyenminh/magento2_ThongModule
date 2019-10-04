@@ -1,4 +1,5 @@
 <?php
+
 namespace Thong\HelloWorld\Controller\Index;
 
 use Magento\Framework\App\Action\Action;
