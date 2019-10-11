@@ -50,5 +50,15 @@ module.exports = {
             'css/styles'
         ],
         dsl: 'less'
+    },
+    melissa: {
+        area: 'frontend',
+        name: 'Smart/melissa',
+        locale: 'en_US',
+        files: [
+            'css/styles-m',
+            'css/styles-l'
+        ],
+        dsl: 'less'
     }
 };

@@ -9,24 +9,6 @@ use Thong\HelloWorld\Block\Allarticle;
 echo $block->LoadAllArticle();
 ?>
 
-<!--<style>-->
-<!--    table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}-->
-<!--    td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }-->
-<!--    tr:nth-child(even) { background-color: #dddddd; }-->
-<!---->
-<!--    .pagination {-->
-<!--        display: inline-block;-->
-<!--    }-->
-<!---->
-<!--    .pagination a {-->
-<!--        color: black;-->
-<!--        float: left;-->
-<!--        padding: 8px 16px;-->
-<!--        text-decoration: none;-->
-<!--    }-->
-<!---->
-<!--</style>-->
-
 <?php if ($block->getPagerHtml()): ?>
     <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
 <?php endif ?>
@@ -55,4 +37,3 @@ echo $block->LoadAllArticle();
 <?php if ($block->getPagerHtml()): ?>
     <div class="order-products-toolbar toolbar bottom"><?php echo $block->getPagerHtml(); ?></div>
 <?php endif ?>
-

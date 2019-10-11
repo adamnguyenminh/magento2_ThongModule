@@ -4,13 +4,15 @@ namespace Thong\HelloWorld\Block;
 use Magento\Framework\View\Element\Template;
 use Magento\Framework\View\Element\Template\Context;
 use Thong\HelloWorld\Model\ResourceModel\Article\CollectionFactory;
+use Thong\HelloWorld\Helper\Data;
 
 class AllArticle extends Template
 {
     protected $_CollectionFactory;
 
-    public function __construct(Context $context,CollectionFactory $CollectionFactory)
+    public function __construct(Context $context,CollectionFactory $CollectionFactory,Data $helperData)
     {
+        $this->helperData = $helperData;
         $this->_CollectionFactory = $CollectionFactory;
         parent::__construct($context);
     }
@@ -32,7 +34,7 @@ class AllArticle extends Template
 
     public function LoadAllArticle()
     {
-        return __('All Article');
+        return __($this->helperData->getGeneralConfig('display_text'));
     }
 
     public function GetCollection()
