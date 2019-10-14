@@ -32,5 +32,14 @@
             </block>
         </referenceContainer>
 
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="form.subscribe" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
+        <move element="top.links" destination="header.panel"/>
+        <move element="wish-list-link" destination="top.links"/>
+        <move element="minicart" destination="top.links" before="my-account-link"/>
+        <referenceBlock name="register-link" remove="true" />
+        <referenceBlock name="authorization-link" remove="true" />
     </body>
 </page>
+
