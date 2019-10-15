@@ -19,8 +19,7 @@
                 </arguments>
             </block>
         </referenceBlock>
-        <referenceContainer name="sidebar.additional">
-            <block class="Magento\Wishlist\Block\Customer\Sidebar" name="wishlist_sidebar" as="wishlist" template="Magento_Wishlist::sidebar.phtml" ifconfig="wishlist/general/show_in_sidebar"/>
-        </referenceContainer>
+<!--        <move element="wish-list-link" destination="header.links" before="authorization-link-login"/>-->
+        <move element="wish-list-link" destination="header.links"/>
     </body>
 </page>

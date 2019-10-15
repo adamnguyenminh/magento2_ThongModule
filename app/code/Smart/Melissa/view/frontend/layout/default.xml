@@ -32,7 +32,7 @@
 
 
         <move element="top.search" destination="header.panel"/>
-        <move element="minicart" destination="header.panel" before="top.search" />
         <move element="navigation.sections" destination="header-wrapper" />
+
     </body>
 </page>
