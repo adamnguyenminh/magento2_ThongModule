@@ -11,7 +11,7 @@
             <block class="Magento\Framework\View\Element\Js\Components" name="wishlist_page_head_components" template="Magento_Wishlist::js/components.phtml"/>
         </referenceBlock>
         <referenceBlock name="top.links">
-            <block class="Magento\Wishlist\Block\Link" name="wish-list-link" after="my-account-link">
+            <block class="Magento\Wishlist\Block\Link" name="wish-list-link">
                 <arguments>
                     <argument name="path" xsi:type="string">wishlist</argument>
                     <argument name="label" xsi:type="string" translate="true">My Wish List</argument>
@@ -19,7 +19,6 @@
                 </arguments>
             </block>
         </referenceBlock>
-<!--        <move element="wish-list-link" destination="header.links" before="authorization-link-login"/>-->
         <move element="wish-list-link" destination="header.links"/>
     </body>
 </page>
