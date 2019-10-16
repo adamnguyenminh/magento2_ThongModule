@@ -25,14 +25,5 @@
         </referenceContainer>
         <referenceBlock name="report.bugs" remove="true"/>
         <move element="copyright" destination="before.body.end"/>
-
-        <referenceBlock name="header" remove="true"/>
-<!--        <referenceBlock name="register-link" remove="true"/>-->
-<!--        <referenceBlock name="authorization-link" remove="true"/>-->
-
-
-        <move element="top.search" destination="header.panel"/>
-        <move element="navigation.sections" destination="header-wrapper" />
-
     </body>
 </page>
